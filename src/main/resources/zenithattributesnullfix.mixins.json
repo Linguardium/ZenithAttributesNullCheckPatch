@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "mod.linguardium.zenithattributesnullfix.mixin",
+	"plugin": "mod.linguardium.zenithattributesnullfix.mixin.CommonMixinPlugin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

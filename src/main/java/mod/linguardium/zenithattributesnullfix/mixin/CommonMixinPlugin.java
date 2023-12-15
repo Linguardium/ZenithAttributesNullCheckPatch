@@ -1,5 +1,6 @@
-package mod.template.mixinonlytemplate.mixin.client;
+package mod.linguardium.zenithattributesnullfix.mixin;
 
+import net.fabricmc.loader.api.FabricLoader;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
@@ -7,7 +8,7 @@ import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 import java.util.List;
 import java.util.Set;
 
-public class ClientMixinPlugin implements IMixinConfigPlugin {
+public class CommonMixinPlugin implements IMixinConfigPlugin {
     @Override
     public void onLoad(String mixinPackage) {
 
@@ -30,6 +31,9 @@ public class ClientMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public List<String> getMixins() {
+        if (FabricLoader.getInstance().isModLoaded("zenith_attributes")) {
+            return List.of("ZenithAttributesPortingLibFixFix");
+        }
         return null;
     }
 
